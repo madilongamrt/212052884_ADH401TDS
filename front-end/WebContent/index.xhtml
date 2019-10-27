@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+	
+    <h:head>
+        <title>TUT_ADH</title>
+    </h:head>
+    <h:body>
+    	<h2>Twitter Management</h2>
+    	
+    	<h:form>
+    		<h:panelGrid columns="2" >
+    			<h:outputLabel value="Tweet Body : "/>
+    	   		<h:inputText 
+    	   			value="#{twittercontroller.twitter.tweetBody}">
+    	   		</h:inputText>
+    		</h:panelGrid>
+    		
+    	   <h:commandButton 
+    	   		value="submit" action="#{twittercontroller.addNewTwitter}">
+    	   </h:commandButton>
+    	</h:form>
+    	
+    	
+    	
+    	
+    	<h:form>
+		<h:dataTable value="#{tweet.tweetList}">
+			<h:outputLabel value="TweetBody :" />
+			<h:outputText
+				value="#{tweet.tweetList.twittercontroller.twitter.TweetID}"></h:outputText>
+			</h:column>
+			<h:column>
+				<h:outputLabel value="TimeStamp :" />
+				<h:outputText
+					value="#{tweet.tweetList.twittercontroller.twitter.ts}"></h:outputText>
+			</h:column>
+			<h:column>
+				<h:outputLabel value="TweetID :" />
+				<h:outputText
+					value="#{tweet.tweetList.twittercontroller.twitter.tweetBody}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Edit</f:facet>
+				<h:commandLink value="Edit"
+					action="#{twittercontroller.twitter.tweetResourcetweetBody(tweetBody, tweetBody)}" />
+			</h:column>
+		</h:dataTable>
+	</h:form>
+    	
+    	
+    </h:body>
+</html>

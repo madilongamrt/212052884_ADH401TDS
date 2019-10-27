@@ -1,0 +1,30 @@
+package model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.sun.jmx.snmp.Timestamp;
+
+@Entity(name = "twitter_tbl")
+public class TwitterEntity {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long TweetID;
+	
+	private String TweetBody;
+	
+	
+	private Date date= new Date();
+
+	private long time = date.getTime();
+	
+	private Timestamp ts = new Timestamp(date.getTime());
+	
+	
+
+}

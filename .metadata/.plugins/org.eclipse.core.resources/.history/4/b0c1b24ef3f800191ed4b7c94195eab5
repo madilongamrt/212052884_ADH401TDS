@@ -1,0 +1,27 @@
+package service;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+/**
+ * Session Bean implementation class twitterEJB
+ */
+@Stateless
+@LocalBean
+public class twitterEJB {
+	
+	@PersistenceContext
+	private EntityManager tw;
+	
+    public twitterEJB() {
+       
+    }
+    
+    
+    public void addNewTwitter(TwitterEntity twitterEntity) {
+    	System.out.println("it add new twitter");
+    }
+
+}

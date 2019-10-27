@@ -1,0 +1,5 @@
+package de.dks.ws;
+
+public class RestService {
+
+}

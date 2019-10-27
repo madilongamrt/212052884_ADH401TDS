@@ -1,0 +1,20 @@
+package de.dks.ws;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Application;
+
+@Path("/myrestService")
+@ApplicationPath("/resources")
+public class RestService extends Application{
+	
+	//http://localhost:8080/frontend/resources/myrestService/sayHello
+	
+	@GET
+	@Path("/sayHello")
+	public String getHelloMsg() {
+		return "Hello";
+	}
+
+}
