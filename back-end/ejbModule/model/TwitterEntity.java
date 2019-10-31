@@ -7,44 +7,39 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.sun.jmx.snmp.Timestamp;
-
-@Entity(name = "twitter_tbl")
+@Entity(name="twitter_tbl")
 public class TwitterEntity {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long TweetID;
-	
-	private String TweetBody;
-	
-	private Timestamp ts = new Timestamp((new Date()).getTime( ));
-
+	private String tweetBody;
+	private Date date;
 	
 	
 	public Long getTweetID() {
 		return TweetID;
 	}
-
+	
 	public void setTweetID(Long tweetID) {
 		TweetID = tweetID;
 	}
-
+	
 	public String getTweetBody() {
-		return TweetBody;
+		return tweetBody;
 	}
-
+	
 	public void setTweetBody(String tweetBody) {
-		TweetBody = tweetBody;
+		this.tweetBody = tweetBody;
 	}
-
-	public Timestamp getTs() {
-		return ts;
+	public Date getDate() {
+		return date;
 	}
-
-	public void setTs(Timestamp ts) {
-		this.ts = ts;
+	public void setDate(Date date) {
+		this.date = date;
 	}
+	
+	
 	
 	
 

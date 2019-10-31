@@ -3,6 +3,8 @@ package service;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -34,40 +36,19 @@ public class twitterEJB {
     }
     
     
-   
-    
-    
-    
-    
     public void addNewTwitter(TwitterEntity twitterEntity) {
-    	System.out.println("it add new twitter");
+    	System.out.println("=======adding  new twitter===to database");
     	
     	tw.persist(twitterEntity);
+    }
+    
+    public List<TwitterEntity> getAllTweets(){
+    	
+    	
+    	return new ArrayList<TwitterEntity> (tw.createQuery("select * from twitter_tbl ",TwitterEntity.class).getResultList());
     }
 
 
 
-
-
-
-
-	public static model.Twitter addMessage(long twitter) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-
-
-
-
-	public static model.Twitter removeMessage(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-    
-  
-    
 
 }

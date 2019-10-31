@@ -19,38 +19,8 @@
     	   		</h:inputText>
     		</h:panelGrid>
     		
-    	   <h:commandButton 
-    	   		value="submit" action="#{twittercontroller.addNewTwitter}">
-    	   </h:commandButton>
+    	   <h:commandButton value="submit" action="#{twittercontroller.addNewTwitter}"></h:commandButton>
     	</h:form>
-    	
-    	
-    	
-    	
-    	<h:form>
-		<h:dataTable value="#{tweet.tweetList}">
-			<h:outputLabel value="TweetBody :" />
-			<h:outputText
-				value="#{tweet.tweetList.twittercontroller.twitter.TweetID}"></h:outputText>
-			</h:column>
-			<h:column>
-				<h:outputLabel value="TimeStamp :" />
-				<h:outputText
-					value="#{tweet.tweetList.twittercontroller.twitter.ts}"></h:outputText>
-			</h:column>
-			<h:column>
-				<h:outputLabel value="TweetID :" />
-				<h:outputText
-					value="#{tweet.tweetList.twittercontroller.twitter.tweetBody}"></h:outputText>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Edit</f:facet>
-				<h:commandLink value="Edit"
-					action="#{twittercontroller.twitter.tweetResourcetweetBody(tweetBody, tweetBody)}" />
-			</h:column>
-		</h:dataTable>
-	</h:form>
-    	
-    	
+	
     </h:body>
 </html>
